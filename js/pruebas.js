@@ -19,7 +19,21 @@ function probarValidarCiudad() {
   );
 }
 
+function probarValidarDescripcionRegalo() {
+  console.assert(
+    validarDescripcionRegalo("") ===
+      "El campo descripcionRegalo debe contener al menos 1 caracter",
+    "Validar descripcionRegalo no validó que el campo descripcionRegalo no sea vacío"
+  );
+
+  console.assert(
+    validarDescripcionRegalo(
+      "123456789abcdefghijklmnopqrstuvwansijkdhaskudhasdhjahsdiuhasihdiausdaskljdklasjdaklsjdlaksjdakljsdklajsdklajsdklasjdioajciaosjcioasd"
+    ) === "El campo descripcionRegalo debe contener menos de 100 caracteres",
+    "validar descripcionRegalo no validó que el campo descripcionRegalo tenga menos de 100 caracteres"
+  );
+}
+
 probarValidarNombre();
 probarValidarCiudad();
-
-
+probarValidarDescripcionRegalo();

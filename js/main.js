@@ -23,6 +23,18 @@ function validarCiudad (ciudad) {
     return '';
 }
 
+function validarDescripcionRegalo(descripcionRegalo) {
+    if (descripcionRegalo.length === 0) {
+        return 'El campo descripcionRegalo debe contener al menos 1 caracter';
+    }
+    if (descripcionRegalo.length >= 100) {
+        return 'El campo descripcionRegalo debe contener menos de 100 caracteres';
+    }
+    // if (descripcionRegalo //es distinto a letras o números) {
+    //     //error
+    // }
+}
+
 //console.log(descripcionRegalo)
 validarNombre();
 validarCiudad();
