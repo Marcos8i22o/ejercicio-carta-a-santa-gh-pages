@@ -6,9 +6,13 @@ function probarValidarNombre() {
 
   console.assert(
     validarNombre(
-      "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+      "aasdasdaokdoakdoakdajsdiojajdijoajiojdoijsdfiojisojdfiesoijojfosjdfoijoisjdoifjijiosdfoijnvjnsdf"
     ) === "Este campo debe tener menos de 50 caracteres",
     "Validar nombre no validó que el nombre sea menor a 50 caracteres"
+  );
+  console.assert(
+    validarNombre("444488") === "Este campo sólo debe contener letras",
+    "Validar nombre no validó que el campo sólo contenga letras"
   );
 }
 
