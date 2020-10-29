@@ -6,11 +6,17 @@ const comportamiento = $form.comportamiento.value;
 const descripcionRegalo = $form['descripcion-regalo'].value;
 
 function validarNombre (nombre) {
+    const contieneSoloLetras = /^[A-z]+$/.test(nombre);
+
     if (nombre.length === 0) {
         return 'Este campo debe tener al menos 1 caracter';
     }
     if (nombre.length >= 50) {
         return 'Este campo debe tener menos de 50 caracteres';
+    }
+
+    if (!contieneSoloLetras) {
+        return 'Este campo sólo debe contener letras';
     }
 
     return '';
@@ -36,5 +42,5 @@ function validarDescripcionRegalo(descripcionRegalo) {
 }
 
 //console.log(descripcionRegalo)
-validarNombre();
-validarCiudad();
+validarNombre(nombre);
+validarCiudad(ciudad);
