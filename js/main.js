@@ -30,7 +30,7 @@ function validarCiudad (ciudad) {
 }
 
 function validarDescripcionRegalo(descripcionRegalo) {
-    const contieneSoloLetrasYNumeros = /^[a-z0-9]+$/.test(descripcionRegalo);
+    const contieneSoloLetrasYNumeros = /^[a-z0-9]+$/i.test(descripcionRegalo);
 
     if (descripcionRegalo.length === 0) {
         return 'El campo descripcionRegalo debe contener al menos 1 caracter';
@@ -41,6 +41,8 @@ function validarDescripcionRegalo(descripcionRegalo) {
     if (!contieneSoloLetrasYNumeros){
         return 'El campo descripcionRegalo sólo debe contener números y letras';
     }
+
+    return '';
 }
 
 // function validarForm() {
