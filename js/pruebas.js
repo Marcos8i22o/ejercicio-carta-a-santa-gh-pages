@@ -34,7 +34,12 @@ function probarValidarDescripcionRegalo() {
     validarDescripcionRegalo(
       "123456789abcdefghijklmnopqrstuvwansijkdhaskudhasdhjahsdiuhasihdiausdaskljdklasjdaklsjdlaksjdakljsdklajsdklajsdklasjdioajciaosjcioasd"
     ) === "El campo descripcionRegalo debe contener menos de 100 caracteres",
-    "validar descripcionRegalo no validó que el campo descripcionRegalo tenga menos de 100 caracteres"
+    "Validar descripcionRegalo no validó que el campo descripcionRegalo tenga menos de 100 caracteres"
+  );
+
+  console.assert(
+    validarDescripcionRegalo(".,.,.,.,") === "El campo descripcionRegalo sólo debe contener números y letras",
+    "Validar descripcionRegalo no validó que el campo sólo contenga números y letras"
   );
 }
 

@@ -30,17 +30,34 @@ function validarCiudad (ciudad) {
 }
 
 function validarDescripcionRegalo(descripcionRegalo) {
+    const contieneSoloLetrasYNumeros = /^[a-z0-9]+$/.test(descripcionRegalo);
+
     if (descripcionRegalo.length === 0) {
         return 'El campo descripcionRegalo debe contener al menos 1 caracter';
     }
     if (descripcionRegalo.length >= 100) {
         return 'El campo descripcionRegalo debe contener menos de 100 caracteres';
     }
-    // if (descripcionRegalo //es distinto a letras o números) {
-    //     //error
-    // }
+    if (!contieneSoloLetrasYNumeros){
+        return 'El campo descripcionRegalo sólo debe contener números y letras';
+    }
 }
 
-//console.log(descripcionRegalo)
+// function validarForm() {
+//     const errorNombre = validarNombre(nombre);
+//     console.log(manejarErrores(errores));
+    
+// }
+
+// function manejarErrores(errores) {
+//     if (!errores) {
+//         console.log("éxito");
+//     } else {
+//         console.log(errores);
+//     }
+// }
+
+
 validarNombre(nombre);
 validarCiudad(ciudad);
+
