@@ -58,17 +58,20 @@ function validarFormulario(event) {
 
 function manejarErrores(errores) {
   let cuentaErrores = 0;
+  
   const $errores = document.querySelector("#errores");
-
+  $errores.textContent = "";
+  
   const keys = Object.keys(errores);
 
   keys.forEach(function (key) {
-    const error = errores[key];
+    const error = errores[key]; 
+
     if (error) {
       $form[key].className = "error";
 
-      const $error = document.createElement("li");
-      $error.innerText = error;
+      const $error = document.createElement("li"); 
+      $error.innerText = error; 
 
       $errores.appendChild($error);
 
@@ -83,6 +86,3 @@ function manejarErrores(errores) {
 
 const $form = document.querySelector("#carta-a-santa");
 $form.onsubmit = validarFormulario;
-
-validarNombre(nombre);
-//validarCiudad(ciudad);
