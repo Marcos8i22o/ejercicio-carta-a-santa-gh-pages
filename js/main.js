@@ -51,27 +51,32 @@ function validarFormulario(event) {
     "descripcion-regalo": validarDescripcionRegalo(descripcionRegalo),
   };
 
-  event.preventDefault();
+  const esExito = manejarErrores(errores) === 0;
 
-  manejarErrores(errores);
+  if (esExito) {
+    $form.className = 'oculto';
+    document.querySelector("#exito").className = "";
+  }
+
+  event.preventDefault();
 }
 
 function manejarErrores(errores) {
   let cuentaErrores = 0;
-  
+
   const $errores = document.querySelector("#errores");
   $errores.textContent = "";
-  
+
   const keys = Object.keys(errores);
 
   keys.forEach(function (key) {
-    const error = errores[key]; 
+    const error = errores[key];
 
     if (error) {
       $form[key].className = "error";
 
-      const $error = document.createElement("li"); 
-      $error.innerText = error; 
+      const $error = document.createElement("li");
+      $error.innerText = error;
 
       $errores.appendChild($error);
 
